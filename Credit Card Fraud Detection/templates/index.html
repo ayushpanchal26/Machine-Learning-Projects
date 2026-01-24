@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            width: 420px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Credit Card Fraud Detection</h2>
+
+    <form action="/predict" method="post">
+        <!-- Time -->
+        <input type="number" step="any" name="Time" placeholder="Time" required>
+
+        <!-- V1 to V28 -->
+        <input type="number" step="any" name="V1" placeholder="V1" required>
+        <input type="number" step="any" name="V2" placeholder="V2" required>
+        <input type="number" step="any" name="V3" placeholder="V3" required>
+        <input type="number" step="any" name="V4" placeholder="V4" required>
+        <input type="number" step="any" name="V5" placeholder="V5" required>
+        <input type="number" step="any" name="V6" placeholder="V6" required>
+        <input type="number" step="any" name="V7" placeholder="V7" required>
+        <input type="number" step="any" name="V8" placeholder="V8" required>
+        <input type="number" step="any" name="V9" placeholder="V9" required>
+        <input type="number" step="any" name="V10" placeholder="V10" required>
+        <input type="number" step="any" name="V11" placeholder="V11" required>
+        <input type="number" step="any" name="V12" placeholder="V12" required>
+        <input type="number" step="any" name="V13" placeholder="V13" required>
+        <input type="number" step="any" name="V14" placeholder="V14" required>
+        <input type="number" step="any" name="V15" placeholder="V15" required>
+        <input type="number" step="any" name="V16" placeholder="V16" required>
+        <input type="number" step="any" name="V17" placeholder="V17" required>
+        <input type="number" step="any" name="V18" placeholder="V18" required>
+        <input type="number" step="any" name="V19" placeholder="V19" required>
+        <input type="number" step="any" name="V20" placeholder="V20" required>
+        <input type="number" step="any" name="V21" placeholder="V21" required>
+        <input type="number" step="any" name="V22" placeholder="V22" required>
+        <input type="number" step="any" name="V23" placeholder="V23" required>
+        <input type="number" step="any" name="V24" placeholder="V24" required>
+        <input type="number" step="any" name="V25" placeholder="V25" required>
+        <input type="number" step="any" name="V26" placeholder="V26" required>
+        <input type="number" step="any" name="V27" placeholder="V27" required>
+        <input type="number" step="any" name="V28" placeholder="V28" required>
+
+        <!-- Amount -->
+        <input type="number" step="any" name="Amount" placeholder="Amount" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
